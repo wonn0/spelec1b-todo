@@ -76,6 +76,14 @@ class _HomePageState extends State<HomePage> {
                     return Card(
                       child: ListTile(
                         leading: const FlutterLogo(),
+                        trailing: IconButton(
+                          icon: const Icon(Icons.delete),
+                          onPressed: () {
+                            setState(() {
+                              todos.removeAt(index);
+                            });
+                          }
+                        ),
                         title: Text(todos[index]),
                       )
                     );
